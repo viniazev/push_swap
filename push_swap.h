@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vinicius <vinicius@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 14:48:35 by vinicius          #+#    #+#             */
-/*   Updated: 2026/06/22 20:05:25 by vinicius         ###   ########.fr       */
+/*   Updated: 2026/06/22 22:22:59 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-# include "libft/libft.h"
 # include <limits.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -91,7 +90,6 @@ t_node				*node_new(int value);
 void				stack_add_bottom(t_stack *stack, t_node *node);
 void				stack_add_top(t_stack *stack, t_node *node);
 t_node				*stack_pop_top(t_stack *stack);
-void				stack_pop_bottom(t_stack *stack);
 void				stack_clear(t_stack *stack);
 void				stack_sorted(t_stack *stack);
 

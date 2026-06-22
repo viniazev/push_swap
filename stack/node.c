@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   node.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vinicius <vinicius@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 17:19:06 by vinicius          #+#    #+#             */
-/*   Updated: 2026/06/22 15:27:49 by vinicius         ###   ########.fr       */
+/*   Updated: 2026/06/22 21:27:31 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_node	*node_new(int value)
 {
-    t_node      *node;
+	t_node	*node;
 
 	node = malloc(sizeof(t_node));
 	if (!node)
