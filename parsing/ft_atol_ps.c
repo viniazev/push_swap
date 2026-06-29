@@ -6,11 +6,12 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 20:05:47 by vinicius          #+#    #+#             */
-/*   Updated: 2026/06/22 21:28:01 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/06/26 15:29:27 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
+#include <stdio.h>
 
 long	ft_atol_ps(const char *str)
 {
@@ -34,3 +35,13 @@ long	ft_atol_ps(const char *str)
 	}
 	return (result * sign);
 }
+
+// int main (void)
+// {
+// 	char *str;
+
+// 	str = " 1   -+231423";
+
+// 	printf("%ld\n", ft_atol_ps(str));
+// 	return (0);
+// }

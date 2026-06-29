@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 14:48:35 by vinicius          #+#    #+#             */
-/*   Updated: 2026/06/22 22:22:59 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/06/27 23:59:17 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ typedef enum e_strategy
 	SIMPLE,
 	MEDIUM,
 	COMPLEX,
-	ADAPTATIVE
+	ADAPTIVE
 }					t_strategy;
 
 // NODES & STACKS
@@ -83,7 +83,7 @@ int					parse_args(t_ps *ps, int argc, char **argv);
 int					is_valid_int(const char *str);
 int					has_duplicates(t_stack *a);
 long				ft_atol_ps(const char *str);
-
+int					parse_flags(int argc, char **argv, t_ps *ps);
 // STACK MANAGEMENT
 
 t_node				*node_new(int value);
@@ -91,8 +91,8 @@ void				stack_add_bottom(t_stack *stack, t_node *node);
 void				stack_add_top(t_stack *stack, t_node *node);
 t_node				*stack_pop_top(t_stack *stack);
 void				stack_clear(t_stack *stack);
-void				stack_sorted(t_stack *stack);
-
+int					stack_sorted(t_stack *stack);
+void				swap_top_two(t_stack *stack);
 // INDEXING
 void				assign_indices(t_stack *a);
 
@@ -100,17 +100,18 @@ void				assign_indices(t_stack *a);
 double				compute_disorder(t_stack *a);
 
 // OPERATIONS
+// SWAP
 void				sa(t_ps *ps);
 void				sb(t_ps *ps);
 void				ss(t_ps *ps);
-
+// PUSH
 void				pa(t_ps *ps);
 void				pb(t_ps *ps);
-
+// ROTATE
 void				ra(t_ps *ps);
 void				rb(t_ps *ps);
 void				rr(t_ps *ps);
-
+// REVERSE ROTATE
 void				rra(t_ps *ps);
 void				rrb(t_ps *ps);
 void				rrr(t_ps *ps);

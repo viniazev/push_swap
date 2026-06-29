@@ -3,10 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   parse_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vinicius <vinicius@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 17:12:52 by vinicius          #+#    #+#             */
-/*   Updated: 2026/06/21 17:12:54 by vinicius         ###   ########.fr       */
+/*   Updated: 2026/06/28 02:42:43 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
+
+int					parse_args(t_ps *ps, int argc, char **argv)
+{
+    int    i;
+
+    i = 0;
+
+
+    
+}
