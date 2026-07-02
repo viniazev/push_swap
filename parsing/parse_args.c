@@ -6,13 +6,13 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 17:12:52 by vinicius          #+#    #+#             */
-/*   Updated: 2026/06/30 18:14:07 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/07/02 20:30:50 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int 	parse_number(char *token, t_ps *ps)
+int	parse_number(char *token, t_ps *ps)
 {
 	long	value;
 	t_node	*node;
