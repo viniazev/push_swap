@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 17:13:08 by vinicius          #+#    #+#             */
-/*   Updated: 2026/06/29 16:53:15 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/06/30 16:51:40 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	parse_flags(int argc, char **argv, t_ps *ps)
 
 	i = 1;
 	ps->bench_mode = 0;
+	ps->index = 0;
 	ps->strategy = ADAPTIVE;
 	while (i < argc && argv[i][0] == '-')
 	{
@@ -32,8 +33,10 @@ int	parse_flags(int argc, char **argv, t_ps *ps)
 		else if (ft_strcmp(argv[i], "--bench") == 0)
 			ps->bench_mode = 1;
 		else
-			break ;
+			return (ps->strategy = ERROR, NULL) ;	
 		i++;
 	}
-	return (i);
+	if (i = argc)
+		return (ps->strategy = ERROR);
+	return (ps->index = i, i);
 }

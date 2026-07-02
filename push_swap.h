@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 14:48:35 by vinicius          #+#    #+#             */
-/*   Updated: 2026/06/27 23:59:17 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/06/30 17:26:31 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ typedef enum e_strategy
 	SIMPLE,
 	MEDIUM,
 	COMPLEX,
-	ADAPTIVE
+	ADAPTIVE,
+	ERROR
 }					t_strategy;
 
 // NODES & STACKS
@@ -72,10 +73,10 @@ typedef struct s_ps
 	t_stack			b;
 
 	t_strategy		strategy;
-
+	int				index;
 	int				bench_mode;
 
-	t_bench			bench;
+	t_bench			*bench;
 }					t_ps;
 
 // PARSING
