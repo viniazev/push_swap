@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 14:48:35 by vinicius          #+#    #+#             */
-/*   Updated: 2026/07/02 22:10:27 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/07/04 19:05:31 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include <limits.h>
 # include <stdlib.h>
 # include <unistd.h>
-
+# include "printf/ft_printf.h"
 // ENUMS
 
 typedef enum e_strategy
@@ -23,8 +23,7 @@ typedef enum e_strategy
 	SIMPLE,
 	MEDIUM,
 	COMPLEX,
-	ADAPTIVE,
-	ERROR
+	ADAPTIVE
 }					t_strategy;
 
 // NODES & STACKS

@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 17:14:02 by vinicius          #+#    #+#             */
-/*   Updated: 2026/06/26 15:13:44 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/07/04 23:47:17 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,32 @@ void	swap_top_two(t_stack *stack)
 
 void	sa(t_ps *ps)
 {
-	swap_top_two(ps->a);
+	swap_top_two(&ps->a);
+	if (ps->bench_mode == 1)
+	{
+		ps->bench->sa++;
+		ps->bench->total++;
+	}
+
 }
 
 void	sb(t_ps *ps)
 {
-	swap_top_two(ps->b);
+	swap_top_two(&ps->b);
+	if (ps->bench_mode == 1)
+	{
+		ps->bench->sb++;
+		ps->bench->total++;
+	}
 }
 
 void	ss(t_ps *ps)
 {
-	swap_top_two(ps->a);
-	swap_top_two(ps->b);
+	swap_top_two(&ps->a);
+	swap_top_two(&ps->b);
+	if (ps->bench_mode == 1)
+	{
+		ps->bench->ss++;
+		ps->bench->total++;
+	}
 }

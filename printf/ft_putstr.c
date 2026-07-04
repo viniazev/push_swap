@@ -1,19 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   simple_sort.c                                      :+:      :+:    :+:   */
+/*   ft_putstr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/21 17:15:49 by vinicius          #+#    #+#             */
-/*   Updated: 2026/07/03 23:35:33 by vinida-s         ###   ########.fr       */
+/*   Created: 2026/04/30 14:58:20 by vinida-s          #+#    #+#             */
+/*   Updated: 2026/05/05 16:49:19 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
-int					find_min_pos(t_stack *a)
+int	ft_putstr(char *s)
 {
+	int	i;
 
-    return ()
+	if (!s)
+		return (ft_putstr("(null)"));
+	i = 0;
+	while (s[i])
+	{
+		write(1, &s[i], 1);
+		i++;
+	}
+	return (i);
 }
+// int	main (void)
+// {
+// 	ft_putstr(NULL);
+// 	return (0);
+// }

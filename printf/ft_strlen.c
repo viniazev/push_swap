@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   simple_sort.c                                      :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/21 17:15:49 by vinicius          #+#    #+#             */
-/*   Updated: 2026/07/03 23:35:33 by vinida-s         ###   ########.fr       */
+/*   Created: 2026/04/20 14:22:28 by vinida-s          #+#    #+#             */
+/*   Updated: 2026/07/04 22:58:33 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
-int					find_min_pos(t_stack *a)
+size_t	ft_strlen(const char *s)
 {
+	size_t	i;
 
-    return ()
+	i = 0;
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
 }

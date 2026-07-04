@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   simple_sort.c                                      :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/21 17:15:49 by vinicius          #+#    #+#             */
-/*   Updated: 2026/07/03 23:35:33 by vinida-s         ###   ########.fr       */
+/*   Created: 2026/04/20 13:52:17 by vinida-s          #+#    #+#             */
+/*   Updated: 2026/05/06 16:37:21 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
-int					find_min_pos(t_stack *a)
+int	ft_isdigit(int c)
 {
-
-    return ()
+	if (c >= '0' && c <= '9')
+		return (1);
+	else
+		return (0);
 }

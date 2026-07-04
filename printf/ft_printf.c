@@ -1,27 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/30 16:33:21 by vinida-s          #+#    #+#             */
-/*   Updated: 2026/07/04 23:18:50 by vinida-s         ###   ########.fr       */
+/*   Created: 2026/05/05 16:55:00 by vinida-s          #+#    #+#             */
+/*   Updated: 2026/05/25 21:56:18 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
-int	main(int argc, char **argv)
+int	ft_printf(const char *format, ...)
 {
-	t_ps	*ps;
+	va_list		args;
+	int			count;
+	int			i;
+	t_format	fmt;
 
-	if (argc < 2)
-		return (write(1, "Error.", 6));
-	if(!parse_args(&ps, argc, argv))
-        return (write(2, "Error.", 6));
-    if (ps->bench_mode == 1)
-        
-
-	return (0);
+	va_start(args, format);
+	i = 0;
+	count = 0;
+	if (!format)
+		return (0);
+	while (format[i])
+	{
+		if (format[i] == '%')
+		{
+			i++;
+			parse_format(format, &i, &fmt);
+			count += handle_format(fmt, &args);
+		}
+		else
+			count += ft_putchar(format[i]);
+		i++;
+	}
+	va_end(args);
+	return (count);
 }
