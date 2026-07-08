@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/30 16:33:21 by vinida-s          #+#    #+#             */
-/*   Updated: 2026/07/04 23:18:50 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/07/05 19:48:34 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 int	main(int argc, char **argv)
 {
-	t_ps	*ps;
+	t_ps	ps;
 
 	if (argc < 2)
 		return (write(1, "Error.", 6));
 	if(!parse_args(&ps, argc, argv))
         return (write(2, "Error.", 6));
-    if (ps->bench_mode == 1)
+    if (ps.bench_mode == 1)
         
 
 	return (0);

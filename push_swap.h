@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 14:48:35 by vinicius          #+#    #+#             */
-/*   Updated: 2026/07/04 19:05:31 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/07/09 00:25:12 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void				stack_add_bottom(t_stack *stack, t_node *node);
 void				stack_add_top(t_stack *stack, t_node *node);
 t_node				*stack_pop_top(t_stack *stack);
 void				stack_clear(t_stack *stack);
-int					stack_sorted(t_stack *stack);
+int					stack_is_sorted(t_stack *stack);
 void				swap_top_two(t_stack *stack);
 // INDEXING
 void				assign_indices(t_stack *a);
