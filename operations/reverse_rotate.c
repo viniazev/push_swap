@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 20:43:39 by vinida-s          #+#    #+#             */
-/*   Updated: 2026/07/09 00:25:09 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/07/09 21:00:36 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,13 @@ void	rrr(t_ps *ps)
 		ps->bench->rrr++;
 		ps->bench->total++;
 	}
+}
+
+void	reverse_rotate_stack(t_ps *ps, t_stack *stack)
+{
+
+	if (stack == &ps->a)
+		rra(ps);
+	else
+		rrb(ps);
 }

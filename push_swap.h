@@ -6,16 +6,16 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 14:48:35 by vinicius          #+#    #+#             */
-/*   Updated: 2026/07/09 00:25:12 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/07/09 21:24:52 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
+# include "printf/ft_printf.h"
 # include <limits.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include "printf/ft_printf.h"
 // ENUMS
 
 typedef enum e_strategy
@@ -93,6 +93,8 @@ t_node				*stack_pop_top(t_stack *stack);
 void				stack_clear(t_stack *stack);
 int					stack_is_sorted(t_stack *stack);
 void				swap_top_two(t_stack *stack);
+void				bring_index_to_top(t_ps *ps, t_stack *stack,
+						int target_index);
 // INDEXING
 void				assign_indices(t_stack *a);
 
@@ -111,10 +113,12 @@ void				pb(t_ps *ps);
 void				ra(t_ps *ps);
 void				rb(t_ps *ps);
 void				rr(t_ps *ps);
+void				rotate_stack(t_ps *ps, t_stack *stack);
 // REVERSE ROTATE
 void				rra(t_ps *ps);
 void				rrb(t_ps *ps);
 void				rrr(t_ps *ps);
+void				reverse_rotate_stack(t_ps *ps, t_stack *stack);
 
 // STRATEGIES
 void				simple_sort(t_ps *ps);
@@ -123,7 +127,7 @@ void				complex_sort(t_ps *ps);
 void				adaptative_sort(t_ps *ps);
 
 // SIMPLE STRATEGY
-int					find_min_pos(t_stack *a);
+int					find_position(t_stack *stack, int index);
 
 // MEDIUM STRATEGY
 void				chunk_sort(t_ps *ps);

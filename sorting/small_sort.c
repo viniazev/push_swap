@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 17:15:32 by vinicius          #+#    #+#             */
-/*   Updated: 2026/07/09 00:25:06 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/07/09 21:25:40 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	sort_two(t_ps *ps)
 	if (ps->a.size != 2)
 		return ;
 	if (ps->a.top->index > ps->a.top->next->index)
-		sa(&ps->a);
+		sa(ps);
 }
 /* eu removi a checagem de tamanho do stack nessa funcao,
 	posteriormente um novo arquivo que
@@ -54,4 +54,30 @@ void	sort_three(t_ps *ps)
 		rra(ps);
 	else if (bot > top && bot > mid)
 		sa(ps);
+}
+
+void	sort_four(t_ps *ps)
+{
+	int	position;
+
+	position = find_position(ps, 0);
+	bring_index_to_top(ps, &ps->a, 0);
+	pb(ps);
+	sort_three(ps);
+	pa(ps);
+}
+
+void	sort_five(t_ps *ps)
+{
+	int	position;
+
+	position = find_position(ps, 0);
+	bring_index_to_top(ps, &ps->a, 0);
+	pb(ps);
+	position = find_position(ps, 1);
+	bring_index_to_top(ps, &ps->a, 1);
+	pb(ps);
+	sort_three(ps);
+	pa(ps);
+	pa(ps);
 }
