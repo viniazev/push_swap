@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 17:12:52 by vinicius          #+#    #+#             */
-/*   Updated: 2026/07/03 23:35:35 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/07/10 20:09:30 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	parse_args(t_ps *ps, int argc, char **argv)
 	if (has_duplicates(&ps->a))
 		return (0);
 	assign_indices(&ps->a);
-	ps->bench->disorder = compute_disorder(&ps->a);
+	ps->bench.disorder = compute_disorder(&ps->a);
 	return (1);
 }
 /*

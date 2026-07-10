@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 17:14:00 by vinicius          #+#    #+#             */
-/*   Updated: 2026/07/04 23:24:16 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/07/10 21:26:54 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,10 @@ void	pa(t_ps *ps)
 		return ;
 	node = stack_pop_top(&ps->b);
 	stack_add_top(&ps->a, node);
-	if (ps->bench_mode == 1)
-	{
-		ps->bench->pa++;
-		ps->bench->total++;
-	}
+	if (!ps->bench_mode)
+		ft_printf("pa\n");
+	else
+		update_bench(ps, OP_PA);
 }
 
 void	pb(t_ps *ps)
@@ -35,9 +34,8 @@ void	pb(t_ps *ps)
 		return ;
 	node = stack_pop_top(&ps->a);
 	stack_add_top(&ps->b, node);
-	if (ps->bench_mode == 1)
-	{
-		ps->bench->pb++;
-		ps->bench->total++;
-	}
+	if (!ps->bench_mode)
+		ft_printf("pb\n");
+	else
+		update_bench(ps, OP_PB);
 }

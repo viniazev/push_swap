@@ -3,10 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vinicius <vinicius@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 17:18:15 by vinicius          #+#    #+#             */
-/*   Updated: 2026/06/21 17:18:15 by vinicius         ###   ########.fr       */
+/*   Updated: 2026/07/10 20:05:49 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../push_swap.h"
+
+void	error_exit(t_ps *ps)
+{
+	write(2, "Error\n", 6);
+	return ;
+}

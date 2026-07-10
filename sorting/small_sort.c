@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 17:15:32 by vinicius          #+#    #+#             */
-/*   Updated: 2026/07/09 21:25:40 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/07/10 21:45:14 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,4 +80,16 @@ void	sort_five(t_ps *ps)
 	sort_three(ps);
 	pa(ps);
 	pa(ps);
+}
+
+void	small_sort(t_ps *ps)
+{
+	if (ps->a.size == 5)
+		sort_five(ps);
+	else if (ps->a.size == 4)
+		sort_four(ps);
+	else if (ps->a.size == 3)
+		sort_three(ps);
+	else
+		sort_two(ps);
 }

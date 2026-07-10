@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 14:48:35 by vinicius          #+#    #+#             */
-/*   Updated: 2026/07/09 21:24:52 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/07/10 21:45:24 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,21 @@ typedef struct s_bench
 	double			disorder;
 }					t_bench;
 
+typedef enum e_op
+{
+	OP_SA,
+	OP_SB,
+	OP_SS,
+	OP_PA,
+	OP_PB,
+	OP_RA,
+	OP_RB,
+	OP_RR,
+	OP_RRA,
+	OP_RRB,
+	OP_RRR
+}					t_op;
+
 // PROGRAM CONTEXT
 typedef struct s_ps
 {
@@ -75,7 +90,7 @@ typedef struct s_ps
 	int				index;
 	int				bench_mode;
 
-	t_bench			*bench;
+	t_bench			bench;
 }					t_ps;
 
 // PARSING
@@ -121,6 +136,7 @@ void				rrr(t_ps *ps);
 void				reverse_rotate_stack(t_ps *ps, t_stack *stack);
 
 // STRATEGIES
+void				small_sort(t_ps *ps);
 void				simple_sort(t_ps *ps);
 void				medium_sort(t_ps *ps);
 void				complex_sort(t_ps *ps);
@@ -138,7 +154,7 @@ void				radix_sort(t_ps *ps);
 // BENCH MODE
 
 void				print_bench(t_ps *ps);
-
+void				update_bench(t_ps *ps, t_op op);
 // ERRORS
 void				error_exit(t_ps *ps);
 
