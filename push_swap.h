@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 14:48:35 by vinicius          #+#    #+#             */
-/*   Updated: 2026/07/13 17:06:51 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/07/13 20:09:00 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <limits.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdio.h>
 // ENUMS
 
 typedef enum e_strategy

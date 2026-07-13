@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 14:45:05 by vinida-s          #+#    #+#             */
-/*   Updated: 2026/07/11 19:29:54 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/07/13 20:49:45 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	stack_is_sorted(t_stack *stack)
 	node = stack->top;
 	while (node)
 	{
-		if (node->index < node->next->index)
+		if (node->index > node->next->index)
 			return (0);
 		node = node->next;
 	}
