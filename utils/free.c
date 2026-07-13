@@ -3,10 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vinicius <vinicius@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 17:18:22 by vinicius          #+#    #+#             */
-/*   Updated: 2026/06/21 17:18:23 by vinicius         ###   ########.fr       */
+/*   Updated: 2026/07/13 16:43:13 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../push_swap.h"
+
+void				free_all(t_ps *ps)
+{
+    stack_clear(&ps->a);
+    stack_clear(&ps->b);
+}

@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vinicius <vinicius@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 13:54:30 by vinida-s          #+#    #+#             */
-/*   Updated: 2026/06/21 16:38:20 by vinicius         ###   ########.fr       */
+/*   Updated: 2026/07/13 16:41:43 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# include "../push_swap.h"
 # include <stdlib.h>
 # include <unistd.h>
-# include "../push_swap.h"
 
 typedef struct s_list
 {
@@ -67,4 +67,5 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
+void				ft_freeall(char **arr, size_t i);
 #endif

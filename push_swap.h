@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 14:48:35 by vinicius          #+#    #+#             */
-/*   Updated: 2026/07/11 19:52:38 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/07/13 17:06:51 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,7 @@ int					stack_is_sorted(t_stack *stack);
 void				swap_top_two(t_stack *stack);
 void				bring_index_to_top(t_ps *ps, t_stack *stack,
 						int target_index);
+void				stack_init(t_ps *ps);
 // INDEXING
 void				assign_indices(t_stack *a);
 

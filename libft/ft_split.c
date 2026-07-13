@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 19:42:14 by vinida-s          #+#    #+#             */
-/*   Updated: 2026/06/30 17:57:55 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/07/13 16:40:17 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static char	*ft_getstrs(char const *s, size_t *i, char c)
 	return (str);
 }
 
-static void	ft_freeall(char **arr, size_t i)
+void	ft_freeall(char **arr, size_t i)
 {
 	while (i > 0)
 		free(arr[--i]);
