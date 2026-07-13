@@ -6,11 +6,11 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 17:15:19 by vinicius          #+#    #+#             */
-/*   Updated: 2026/07/10 21:32:34 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/07/11 19:28:01 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	print_bench(t_ps *ps)
 {

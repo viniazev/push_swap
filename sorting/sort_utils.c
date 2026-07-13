@@ -6,18 +6,18 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 21:30:32 by vinida-s          #+#    #+#             */
-/*   Updated: 2026/07/10 19:50:38 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/07/11 19:48:50 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	find_position(t_stack *stack, int index)
+int	find_position(t_ps *ps, int index)
 {
 	t_node	*node;
 	int		position;
 
-	node = stack->top;
+	node = ps->a.top;
 	position = 0;
 	while (node)
 	{
@@ -33,7 +33,7 @@ void	bring_index_to_top(t_ps *ps, t_stack *stack, int target_index)
 {
 	int	position;
 
-	position = find_position(stack, target_index);
+	position = find_position(ps, target_index);
 	if (position == -1)
 		return ;
 	if (position <= stack->size / 2)
@@ -41,7 +41,7 @@ void	bring_index_to_top(t_ps *ps, t_stack *stack, int target_index)
 		while (position != 0)
 		{
 			rotate_stack(ps, stack);
-			position = find_position(stack, target_index);
+			position = find_position(ps, target_index);
 		}
 	}
 	else
@@ -49,7 +49,7 @@ void	bring_index_to_top(t_ps *ps, t_stack *stack, int target_index)
 		while (position != 0)
 		{
 			reverse_rotate_stack(ps, stack);
-			position = find_position(stack, target_index);
+			position = find_position(ps, target_index);
 		}
 	}
 }

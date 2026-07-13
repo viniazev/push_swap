@@ -6,11 +6,11 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 20:43:39 by vinida-s          #+#    #+#             */
-/*   Updated: 2026/07/10 21:29:40 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/07/11 19:35:23 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static void	ps_reverse_rotate(t_stack *stack)
 {
@@ -18,8 +18,8 @@ static void	ps_reverse_rotate(t_stack *stack)
 
 	if (!stack || stack->size < 2)
 		return ;
-	node = stack_pop_bottom(&stack);
-	stack_add_top(&stack, node);
+	node = stack_pop_bottom(stack);
+	stack_add_top(stack, node);
 }
 
 void	rra(t_ps *ps)

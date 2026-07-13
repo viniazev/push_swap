@@ -6,11 +6,11 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 17:13:57 by vinicius          #+#    #+#             */
-/*   Updated: 2026/07/10 21:29:12 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/07/11 19:29:27 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static void	ps_rotate(t_stack *stack)
 {

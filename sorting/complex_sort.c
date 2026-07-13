@@ -6,10 +6,10 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 17:17:38 by vinicius          #+#    #+#             */
-/*   Updated: 2026/06/26 00:59:53 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/07/11 19:30:18 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 

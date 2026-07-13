@@ -6,12 +6,13 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 14:48:35 by vinicius          #+#    #+#             */
-/*   Updated: 2026/07/10 21:45:24 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/07/11 19:52:38 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
+# include "libft/libft.h"
 # include "printf/ft_printf.h"
 # include <limits.h>
 # include <stdlib.h>
@@ -94,7 +95,7 @@ typedef struct s_ps
 }					t_ps;
 
 // PARSING
-int					parse_args(t_ps *ps, int argc, char **argv);
+int					parse_args(int argc, char **argv, t_ps *ps);
 int					is_valid_int(const char *str);
 int					has_duplicates(t_stack *a);
 long				ft_atol_ps(const char *str);
@@ -105,6 +106,7 @@ t_node				*node_new(int value);
 void				stack_add_bottom(t_stack *stack, t_node *node);
 void				stack_add_top(t_stack *stack, t_node *node);
 t_node				*stack_pop_top(t_stack *stack);
+t_node				*stack_pop_bottom(t_stack *stack);
 void				stack_clear(t_stack *stack);
 int					stack_is_sorted(t_stack *stack);
 void				swap_top_two(t_stack *stack);
@@ -143,7 +145,7 @@ void				complex_sort(t_ps *ps);
 void				adaptative_sort(t_ps *ps);
 
 // SIMPLE STRATEGY
-int					find_position(t_stack *stack, int index);
+int					find_position(t_ps *ps, int index);
 
 // MEDIUM STRATEGY
 void				chunk_sort(t_ps *ps);

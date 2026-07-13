@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 17:15:32 by vinicius          #+#    #+#             */
-/*   Updated: 2026/07/10 21:45:14 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/07/11 19:49:11 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	sort_four(t_ps *ps)
 	int	position;
 
 	position = find_position(ps, 0);
-	bring_index_to_top(ps, &ps->a, 0);
+	bring_index_to_top(ps, &ps->a, position);
 	pb(ps);
 	sort_three(ps);
 	pa(ps);
@@ -72,10 +72,10 @@ void	sort_five(t_ps *ps)
 	int	position;
 
 	position = find_position(ps, 0);
-	bring_index_to_top(ps, &ps->a, 0);
+	bring_index_to_top(ps, &ps->a, position);
 	pb(ps);
 	position = find_position(ps, 1);
-	bring_index_to_top(ps, &ps->a, 1);
+	bring_index_to_top(ps, &ps->a, position);
 	pb(ps);
 	sort_three(ps);
 	pa(ps);

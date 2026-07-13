@@ -6,11 +6,11 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 17:19:15 by vinicius          #+#    #+#             */
-/*   Updated: 2026/06/26 15:16:42 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/07/11 19:30:43 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	stack_add_bottom(t_stack *stack, t_node *node)
 {

@@ -6,11 +6,11 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 17:12:52 by vinicius          #+#    #+#             */
-/*   Updated: 2026/07/10 20:09:30 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/07/12 01:30:00 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	parse_number(char *token, t_ps *ps)
 {
@@ -29,13 +29,13 @@ int	parse_number(char *token, t_ps *ps)
 	return (1);
 }
 
-int	parse_args(t_ps *ps, int argc, char **argv)
+int	parse_args(int argc, char **argv, t_ps *ps)
 {
 	int		i;
 	int		j;
 	char	**tokens;
 
-	i = parse_flags(ps, argc, argv);
+	i = parse_flags(argc, argv, ps);
 	j = -1;
 	while (i < argc)
 	{
