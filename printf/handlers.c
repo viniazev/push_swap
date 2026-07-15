@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/07 16:57:46 by vinida-s          #+#    #+#             */
-/*   Updated: 2026/07/04 22:51:10 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/07/15 00:38:10 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int	handle_format(t_format fmt, va_list *args)
 		return (ft_putstr(va_arg(*args, char *)));
 	if (fmt.type == 'd' || fmt.type == 'i')
 		return (ft_putnbr(va_arg(*args, int)));
+	if (fmt.type == 'f')
+		ft_print_double(va_arg(*args, double));
 	if (fmt.type == 'x')
 		return (ft_puthex_lower(va_arg(*args, unsigned int)));
 	if (fmt.type == 'X')

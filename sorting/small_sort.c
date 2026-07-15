@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 17:15:32 by vinicius          #+#    #+#             */
-/*   Updated: 2026/07/13 20:53:08 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/07/15 01:38:16 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,6 @@ void	sort_two(t_ps *ps)
 	if (ps->a.top->index > ps->a.top->next->index)
 		sa(ps);
 }
-/* eu removi a checagem de tamanho do stack nessa funcao,
-	posteriormente um novo arquivo que
-chama as funcoes de small_sort sera escrito e essas funcoes de aqui serão chamadas apenas se
-cumprirem os requisitos de tamanho de stack,
-	sort_three por exemplo só deve ser chamado se e
-somente se o stack->size = 3.
-*/
 
 void	sort_three(t_ps *ps)
 {
@@ -62,8 +55,7 @@ void	sort_four(t_ps *ps)
 		return ;
 	bring_index_to_top(ps, &ps->a, 0);
 	pb(ps);
-	if (!stack_is_sorted(&ps->a))
-		sort_three(ps);
+	sort_three(ps);
 	pa(ps);
 }
 
@@ -75,8 +67,7 @@ void	sort_five(t_ps *ps)
 	pb(ps);
 	bring_index_to_top(ps, &ps->a, 1);
 	pb(ps);
-	if (!stack_is_sorted(&ps->a))
-		sort_three(ps);
+	sort_three(ps);
 	pa(ps);
 	pa(ps);
 }

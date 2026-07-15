@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 14:48:35 by vinicius          #+#    #+#             */
-/*   Updated: 2026/07/13 20:09:00 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/07/15 02:06:47 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 # include "libft/libft.h"
 # include "printf/ft_printf.h"
 # include <limits.h>
+# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdio.h>
 // ENUMS
 
 typedef enum e_strategy
@@ -64,7 +64,7 @@ typedef struct s_bench
 	long			rrb;
 	long			rrr;
 
-	double			disorder;
+	float			disorder;
 }					t_bench;
 
 typedef enum e_op
@@ -118,7 +118,7 @@ void				stack_init(t_ps *ps);
 void				assign_indices(t_stack *a);
 
 // DISORDER
-double				compute_disorder(t_stack *a);
+float				compute_disorder(t_stack *a);
 
 // OPERATIONS
 // SWAP
@@ -147,7 +147,8 @@ void				complex_sort(t_ps *ps);
 void				adaptative_sort(t_ps *ps);
 
 // SIMPLE STRATEGY
-int					find_position(t_ps *ps, int index);
+int					find_position(t_stack *stack, int index);
+int					find_insert_position(t_stack *stack, int current);
 
 // MEDIUM STRATEGY
 void				chunk_sort(t_ps *ps);

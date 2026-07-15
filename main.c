@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/30 16:33:21 by vinida-s          #+#    #+#             */
-/*   Updated: 2026/07/13 20:55:12 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/07/14 23:27:06 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int	main(int argc, char **argv)
 		devo agr iniciar a ordenacao*/
 	ft_printf("Strategy selected: %d\n", ps.strategy);
 	ft_printf("Bench mode: %d\n", ps.bench_mode);
+	if (stack_is_sorted(&ps.a))
+		return (error_exit(&ps), printf("stack sorted\n"));
 	if (ps.strategy == ADAPTIVE)
 		adaptative_sort(&ps);
 	else if (ps.strategy == SIMPLE)

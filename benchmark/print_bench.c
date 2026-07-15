@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 17:15:19 by vinicius          #+#    #+#             */
-/*   Updated: 2026/07/13 19:59:32 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/07/15 00:36:34 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 void	print_bench(t_ps *ps)
 {
-	ft_printf("Benchmark Results:\n");
 	ft_printf("----------------------\n");
+	ft_printf("Benchmark Results:\n");
 	ft_printf("Total Operations: %l\n", ps->bench.total);
 	ft_printf("Strategy: %d\n", ps->strategy);
-	ft_printf("Disorder: %d %%\n", (float)ps->bench.disorder * 10);
+	ft_printf("Disorder: %f %%\n", ps->bench.disorder);
+	ft_printf("----------------------\n");
 	ft_printf("sa: %l\n", ps->bench.sa);
 	ft_printf("sb: %l\n", ps->bench.sb);
 	ft_printf("ss: %l\n", ps->bench.ss);
@@ -30,6 +31,7 @@ void	print_bench(t_ps *ps)
 	ft_printf("rra: %l\n", ps->bench.rra);
 	ft_printf("rrb: %l\n", ps->bench.rrb);
 	ft_printf("rrr: %l\n", ps->bench.rrr);
+	ft_printf("----------------------\n");
 }
 
 void	update_bench(t_ps *ps, t_op op)

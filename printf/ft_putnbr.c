@@ -55,6 +55,21 @@ long	ft_putlnbr(long n)
 	}
 	return (total);
 }
+
+void	ft_print_double(double n)
+{
+	int	i;
+	int	f;
+
+	n *= 100;
+	i = (int)n;
+	f = (int)((n - i) * 100);
+	ft_putnbr(i);
+	ft_putchar('.');
+	if (f < 10)
+		ft_putchar('0');
+	ft_putnbr(f);
+}
 // #include <stdio.h>
 // int	main(void)
 // {

@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 14:45:05 by vinida-s          #+#    #+#             */
-/*   Updated: 2026/07/13 20:49:45 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/07/14 23:41:17 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,16 @@ int	has_duplicates(t_stack *a)
 
 int	is_valid_int(const char *str)
 {
-	long	i;
+	int	i;
 
-	i = ft_atol_ps(str);
-	return (i);
+	i = 0;
+	while (str[i])
+	{
+		if (!ft_isdigit(str[i]))
+			return (0);
+		i++;
+	}
+	return (1);
 }
 
 int	stack_is_sorted(t_stack *stack)
@@ -47,7 +53,7 @@ int	stack_is_sorted(t_stack *stack)
 	t_node	*node;
 
 	node = stack->top;
-	while (node)
+	while (node->next != NULL)
 	{
 		if (node->index > node->next->index)
 			return (0);
