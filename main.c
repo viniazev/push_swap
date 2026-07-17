@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/30 16:33:21 by vinida-s          #+#    #+#             */
-/*   Updated: 2026/07/14 23:27:06 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/07/17 23:24:16 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	main(int argc, char **argv)
 	if (ps.strategy == ADAPTIVE)
 		adaptative_sort(&ps);
 	else if (ps.strategy == SIMPLE)
-		return (0);
+		simple_sort(&ps);
 	else if (ps.strategy == MEDIUM)
 		return (0);
 	else

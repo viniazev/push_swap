@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 14:48:35 by vinicius          #+#    #+#             */
-/*   Updated: 2026/07/15 02:06:47 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/07/18 00:32:45 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,10 +146,17 @@ void				medium_sort(t_ps *ps);
 void				complex_sort(t_ps *ps);
 void				adaptative_sort(t_ps *ps);
 
+// SMALL SORT
+void				sort_five(t_ps *ps);
+void				sort_four(t_ps *ps);
+void				sort_three(t_ps *ps);
+void				sort_two(t_ps *ps);
 // SIMPLE STRATEGY
 int					find_position(t_stack *stack, int index);
 int					find_insert_position(t_stack *stack, int current);
-
+int					ps_find_pivot(t_stack *stack);
+int					find_min(t_stack *stack);
+int					find_max(t_stack *stack);
 // MEDIUM STRATEGY
 void				chunk_sort(t_ps *ps);
 
