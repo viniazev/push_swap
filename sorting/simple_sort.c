@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 17:15:49 by vinicius          #+#    #+#             */
-/*   Updated: 2026/07/18 00:40:56 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/07/27 19:02:30 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,23 +26,17 @@ void	insertion_sort(t_ps *ps)
 {
 	int		target;
 	int		current;
+	int		pivot;
 	t_node	*node;
-	int		max;
 
-	node = ps->a.top;
+	node = ps->b.top;
 	current = ps->a.top->index;
-	while (ps->a.size > 0)
+	target = 0;
+	pivot = 0;
+	while (node->next != NULL)
 	{
-		current = node->index;
-		target = find_insert_position(&ps->b, current);
-		bring_index_to_top(ps, &ps->b, target);
-		pb(ps);
-		node = node->next;
-		if (!node)
-			break ;
+
 	}
-	max = find_max(&ps->b);
-	bring_index_to_top(ps, &ps->b, max);
 	while (ps->b.size > 0)
 		pa(ps);
 }
@@ -50,7 +44,7 @@ void	insertion_sort(t_ps *ps)
 void	simple_sort(t_ps *ps)
 {
 	if (ps->a.size == 0)
-		return ;
+		return (error_exit(ps));
 	if (ps->a.size <= 5)
 		return (sort_five(ps));
 	pb(ps);

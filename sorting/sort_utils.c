@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 21:30:32 by vinida-s          #+#    #+#             */
-/*   Updated: 2026/07/18 00:38:00 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/07/27 19:14:38 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,23 +44,21 @@ int	find_max(t_stack *stack)
 	return (max);
 }
 
-int	find_insert_position(t_stack *stack, int current)
+int	find_insert_position(t_stack *stack, int target)
 {
 	int		position;
-	int		pivot;
 	t_node	*node;
 
 	node = stack->top;
 	position = 0;
-	while (node->next != NULL)
+	while (node && node->next)
 	{
-		if (current < node->index && current > node->next->index)
+		if (target < node->index && target > node->next->index)
 			return (position + 1);
 		position++;
 		node = node->next;
 	}
-	pivot = ps_find_pivot(stack);
-	return (pivot);
+	return (-1);
 }
 
 int	find_position(t_stack *stack, int index)
@@ -104,4 +102,3 @@ void	bring_index_to_top(t_ps *ps, t_stack *stack, int target_index)
 		}
 	}
 }
-
