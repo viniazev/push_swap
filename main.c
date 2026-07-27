@@ -39,5 +39,6 @@ int	main(int argc, char **argv)
 		imprimir o bench ao final e nao imprimir as operacoes*/
 	if (ps.bench_mode == 1)
 		print_bench(&ps);
+	free_all(&ps);
 	return (0);
 }
