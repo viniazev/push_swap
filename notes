@@ -1,2 +1,54 @@
 Comando para o tester (usar após compilar o programa).
 ft_ps_tester ./push_swap
+
+Opções para reduzir operações no Push Swap
+========================================
+
+1. Evitar rotações redundantes
+- O código repete chamadas para posicionar o stack B no máximo várias vezes.
+- Isso consome operações extras sem necessidade.
+- A melhor melhoria inicial é reduzir esses movimentos repetidos.
+
+2. Escolher o alvo de inserção com menor custo
+- Esta é a mudança mais importante para a sua implementação atual.
+- O ponto principal está em sorting/simple_sort.c, dentro de insertion_sort().
+- Hoje você calcula um alvo e depois chama rotate_to_position() uma vez.
+- O que você quer fazer é comparar dois caminhos possíveis para esse alvo:
+  - rotar para cima (rotate)
+  - rotar para baixo (reverse rotate)
+- A decisão deve ser baseada em qual dos dois usa menos movimentos.
+- Em termos práticos, você precisa calcular:
+  - custo_para_cima = posição
+  - custo_para_baixo = tamanho_do_stack - posição
+- Se custo_para_cima for menor, use rotate.
+- Se custo_para_baixo for menor, use reverse rotate.
+- Isso evita mover o stack desnecessariamente e reduz bastante o total de operações.
+
+3. Onde exatamente mexer no código
+- Arquivo principal para começar: sorting/simple_sort.c
+- Função a alterar: insertion_sort()
+- Função auxiliar que já existe e pode ser aproveitada: rotate_to_position()
+- Se quiser deixar o código mais limpo, você pode criar uma função nova para decidir entre rotate e reverse rotate, mas isso é opcional.
+- A lógica de encontrar a posição correta do valor no stack B também está em find_insert_position().
+- Se quiser deixar a implementação mais robusta, vale revisar essa função para garantir que ela devolve a posição correta para o seu caso de inserção.
+
+4. Melhorar a distribuição inicial para B
+- No início de simple_sort(), você faz dois pb().
+- Isso pode funcionar, mas pode ser melhor começar com 3 ou 4 valores em B dependendo do tamanho.
+- Esse ajuste é opcional no começo, mas ajuda a reduzir o número de movimentos depois.
+
+5. Usar chunking ou particionamento
+- Quando você for implementar isso para medium_sort.c e complex_sort.c, pense em dividir os valores em blocos.
+- Cada bloco pode ser empurrado para B e depois reorganizado de forma mais eficiente.
+- Isso é mais estruturado do que ficar inserindo um valor por vez.
+
+6. Se quiser o maior ganho possível
+- Radix sort é a abordagem mais forte para reduzir movimentos.
+- Quando você for implementar em medium_sort.c e complex_sort.c, ele pode substituir a lógica de inserção mais simples.
+- Mas primeiro vale fazer a melhoria de custo de inserção em simple_sort.c, porque ela é mais direta e já traz ganho.
+
+Resumo prático:
+- Primeiro: implementar a escolha do caminho mais barato em insertion_sort().
+- Segundo: revisar find_insert_position() para garantir que a posição retornada faz sentido.
+- Terceiro: depois testar com vários casos e comparar o número de operações.
+- Quarto: quando estiver confortável, implementar chunking e depois radix para medium/complex.

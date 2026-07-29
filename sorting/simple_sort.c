@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 17:15:49 by vinicius          #+#    #+#             */
-/*   Updated: 2026/07/28 20:28:10 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/07/29 22:19:30 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,10 @@ int	find_insert_position(t_stack *stack, int target)
 	position = 0;
 	max = find_max(stack);
 	min = find_min(stack);
-	if (target > max || target < min)
-		return (find_position(stack, max));
+	if (target > max)
+		return (0);
+	if (target < min)
+		return (stack->size);
 	while (node && node->next)
 	{
 		if (target < node->index && target > node->next->index)
@@ -54,18 +56,52 @@ void	insertion_sort(t_ps *ps)
 {
 	int	target;
 	int	current;
+	int maxpos;
 
+	rotate_to_position(ps, &ps->b, find_position(&ps->b, find_max(&ps->b)));
 	while (ps->a.size > 0)
 	{
 		current = ps->a.top->index;
 		target = find_insert_position(&ps->b, current);
 		if (target == -1)
+			return (error_exit(ps));
+		if (target <= ps->b.size / 2)
 		{
-			printf("find_insertion_sort retornou: %i", target);
-			return ;
+			while (target > 0)
+			{
+				rotate_stack(ps, &ps->b);
+				target--;
+			}
 		}
-		rotate_to_position(ps, &ps->b, target);
+		else
+		{
+			target = ps->b.size - target;
+			while (target > 0)
+			{
+				reverse_rotate_stack(ps, &ps->b);
+				target--;
+			}
+		}
 		pb(ps);
+		maxpos = find_insert_position(&ps->b, find_max(&ps->b));
+		if (maxpos <= ps->b.size / 2)
+		{
+			while (maxpos > 0)
+			{
+				rotate_stack(ps, &ps->b);
+				maxpos--;
+			}
+		}
+		else
+		{
+			maxpos = ps->b.size - maxpos;
+			while (maxpos > 0)
+			{
+				reverse_rotate_stack(ps, &ps->b);
+				maxpos--;
+			}
+			
+		}
 	}
 }
 
@@ -74,7 +110,7 @@ void	simple_sort(t_ps *ps)
 	if (ps->a.size == 0)
 		return (error_exit(ps));
 	if (ps->a.size <= 5)
-		return (sort_five(ps));
+		return (small_sort(ps));
 	pb(ps);
 	pb(ps);
 	insertion_sort(ps);

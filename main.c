@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/30 16:33:21 by vinida-s          #+#    #+#             */
-/*   Updated: 2026/07/17 23:24:16 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/07/29 20:31:08 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 int	main(int argc, char **argv)
 {
 	t_ps			ps;
-
+	t_node			*node;
+	
 	if (argc < 2)
 		return (write(2, "Error.", 6));
 	stack_init(&ps);
@@ -39,6 +40,18 @@ int	main(int argc, char **argv)
 		imprimir o bench ao final e nao imprimir as operacoes*/
 	if (ps.bench_mode == 1)
 		print_bench(&ps);
-	free_all(&ps);
+	//	imprimir o stack para testes, remover antes de entregar
+	if (ps.a.top || ps.b.top)
+	{
+	node = ps.a.top;
+	while (node->next != NULL)
+	{
+		printf("%i\n", node->index);
+		node = node->next;
+	}
+	printf("%i\n", node->index);
+	}
+	if (ps.a.top || ps.b.top)
+		free_all(&ps);
 	return (0);
 }
