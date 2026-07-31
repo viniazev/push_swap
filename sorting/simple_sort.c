@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 17:15:49 by vinicius          #+#    #+#             */
-/*   Updated: 2026/07/29 22:19:30 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/07/31 22:57:57 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ void	insertion_sort(t_ps *ps)
 {
 	int	target;
 	int	current;
-	int maxpos;
 
 	rotate_to_position(ps, &ps->b, find_position(&ps->b, find_max(&ps->b)));
 	while (ps->a.size > 0)
@@ -65,45 +64,15 @@ void	insertion_sort(t_ps *ps)
 		target = find_insert_position(&ps->b, current);
 		if (target == -1)
 			return (error_exit(ps));
-		if (target <= ps->b.size / 2)
-		{
-			while (target > 0)
-			{
-				rotate_stack(ps, &ps->b);
-				target--;
-			}
-		}
-		else
-		{
-			target = ps->b.size - target;
-			while (target > 0)
-			{
-				reverse_rotate_stack(ps, &ps->b);
-				target--;
-			}
-		}
+		rotate_to_position(ps, &ps->b, target);
 		pb(ps);
-		maxpos = find_insert_position(&ps->b, find_max(&ps->b));
-		if (maxpos <= ps->b.size / 2)
-		{
-			while (maxpos > 0)
-			{
-				rotate_stack(ps, &ps->b);
-				maxpos--;
-			}
-		}
-		else
-		{
-			maxpos = ps->b.size - maxpos;
-			while (maxpos > 0)
-			{
-				reverse_rotate_stack(ps, &ps->b);
-				maxpos--;
-			}
-			
-		}
+		rotate_to_position(ps, &ps->b, find_position(&ps->b, find_max(&ps->b)));
 	}
 }
+/* na linha 69 tem uma segunda chamada para a funcao rotate to position, o que faz com que o stack b esteja sempre em ordem decrescente,
+isso é muito ineficiente e precisa ser alterado, posso manter o stack ordenado rotativamente e entao rotacionar o stack a para encontrar
+uma posicao mais favoravel.
+*/
 
 void	simple_sort(t_ps *ps)
 {

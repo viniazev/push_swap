@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 17:15:19 by vinicius          #+#    #+#             */
-/*   Updated: 2026/07/15 00:36:34 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/07/31 20:38:05 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,8 @@ void	update_bench(t_ps *ps, t_op op)
 		ps->bench.rr++;
 	else if (op == OP_RRA)
 		ps->bench.rra++;
-	else if (op == OP_RB)
-		ps->bench.rb++;
+	else if (op == OP_RRB)
+		ps->bench.rrb++;
 	else if (op == OP_RRR)
 		ps->bench.rrr++;
 	ps->bench.total++;

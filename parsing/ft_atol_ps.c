@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 20:05:47 by vinicius          #+#    #+#             */
-/*   Updated: 2026/06/26 15:29:27 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/07/31 23:00:53 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ long	ft_atol_ps(const char *str)
 // {
 // 	char *str;
 
-// 	str = " 1   -+231423";
+// 	str = "   -231423";
 
 // 	printf("%ld\n", ft_atol_ps(str));
 // 	return (0);
