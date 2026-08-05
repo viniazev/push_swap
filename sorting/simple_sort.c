@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 17:15:49 by vinicius          #+#    #+#             */
-/*   Updated: 2026/07/31 22:57:57 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/08/03 19:36:23 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,8 @@ void	insertion_sort(t_ps *ps)
 			return (error_exit(ps));
 		rotate_to_position(ps, &ps->b, target);
 		pb(ps);
-		rotate_to_position(ps, &ps->b, find_position(&ps->b, find_max(&ps->b)));
 	}
+	rotate_to_position(ps, &ps->b, find_position(&ps->b, find_max(&ps->b)));
 }
 /* na linha 69 tem uma segunda chamada para a funcao rotate to position, o que faz com que o stack b esteja sempre em ordem decrescente,
 isso é muito ineficiente e precisa ser alterado, posso manter o stack ordenado rotativamente e entao rotacionar o stack a para encontrar
