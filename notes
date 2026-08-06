@@ -52,3 +52,7 @@ Resumo prático:
 - Segundo: revisar find_insert_position() para garantir que a posição retornada faz sentido.
 - Terceiro: depois testar com vários casos e comparar o número de operações.
 - Quarto: quando estiver confortável, implementar chunking e depois radix para medium/complex.
+
+
+
+

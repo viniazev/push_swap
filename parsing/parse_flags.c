@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 17:13:08 by vinicius          #+#    #+#             */
-/*   Updated: 2026/07/31 23:10:21 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/08/05 20:03:16 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	parse_flags(int argc, char **argv, t_ps *ps)
 	int	i;
 
 	i = 1;
-	while (i < argc && (argv[i][0] == '-' && argv[i][1] == '-'))
+	while (i < argc && (argv[i][0] == '-'))
 	{
 		if (ft_strncmp(argv[i], "--simple", 9) == 0)
 			ps->strategy = SIMPLE;
@@ -30,10 +30,10 @@ int	parse_flags(int argc, char **argv, t_ps *ps)
 		else if (ft_strncmp(argv[i], "--bench", 8) == 0)
 			ps->bench_mode = 1;
 		else
-			return (write(2, "Error.\n", 7), 0);
+			return (error_exit(ps), 0);
 		i++;
 	}
-//	if (i == argc)
-//		return (write(2, "Error.", 6), 0);
-	return (ps->index = i, i);
+	if (i == argc)
+		return (error_exit(ps), 0);
+	return (i);
 }

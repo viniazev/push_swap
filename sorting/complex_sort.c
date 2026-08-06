@@ -6,10 +6,15 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 17:17:38 by vinicius          #+#    #+#             */
-/*   Updated: 2026/07/11 19:30:18 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/08/06 01:11:46 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
+
+void				complex_sort(t_ps *ps)
+{
+    return (error_exit(ps));
+}
 

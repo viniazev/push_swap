@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 14:48:35 by vinicius          #+#    #+#             */
-/*   Updated: 2026/07/28 20:02:32 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/08/06 01:44:06 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,20 @@ typedef struct s_stack
 	t_node			*bottom;
 	int				size;
 }					t_stack;
+
+// ROTATION
+typedef struct s_rotation
+{
+	int							position;
+	int							cost;
+	t_rotation_type				direction;
+}					t_rotation;
+
+typedef enum e_rotation
+{
+	ROTATE,
+	REVERSE_ROTATE
+}	t_rotation_type;
 
 // BENCHMARK
 typedef struct s_bench
@@ -89,7 +103,6 @@ typedef struct s_ps
 	t_stack			b;
 
 	t_strategy		strategy;
-	int				index;
 	int				bench_mode;
 
 	t_bench			bench;

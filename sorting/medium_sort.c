@@ -3,10 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   medium_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vinicius <vinicius@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 17:17:25 by vinicius          #+#    #+#             */
-/*   Updated: 2026/06/21 17:17:26 by vinicius         ###   ########.fr       */
+/*   Updated: 2026/08/06 01:11:48 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../push_swap.h"
+
+void				medium_sort(t_ps *ps)
+{
+    return (error_exit(ps));
+}

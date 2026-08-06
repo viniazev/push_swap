@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 17:12:52 by vinicius          #+#    #+#             */
-/*   Updated: 2026/07/14 23:42:42 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/08/05 20:01:43 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	stack_init(t_ps *ps)
 	ps->b.bottom = NULL;
 	ps->b.size = 0;
 	ps->strategy = ADAPTIVE;
-	ps->index = 0;
 	ps->bench_mode = 0;
 	ps->bench.total = 0;
 	ps->bench.sa = 0;

@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 17:18:07 by vinicius          #+#    #+#             */
-/*   Updated: 2026/07/15 00:17:57 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/08/06 01:08:10 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ void	adaptative_sort(t_ps *ps)
 {
 	if (ps->a.size <= 5)
 		small_sort(ps);
-	else if (ps->bench.disorder < 0.10)
-		return ;
-	else if (ps->a.size < 150)
-		return ;
+	else if (ps->bench.disorder < 0.2)
+		simple_sort(ps);
+	else if (ps->bench.disorder >= 0.2 && ps->bench.disorder < 0.5)
+		medium_sort(ps);
 	else
-		return ;
+		complex_sort(ps);
 	return ;
 }
