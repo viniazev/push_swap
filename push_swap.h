@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 14:48:35 by vinicius          #+#    #+#             */
-/*   Updated: 2026/08/06 01:44:06 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/08/06 23:21:48 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,18 +45,26 @@ typedef struct s_stack
 }					t_stack;
 
 // ROTATION
-typedef struct s_rotation
-{
-	int							position;
-	int							cost;
-	t_rotation_type				direction;
-}					t_rotation;
-
 typedef enum e_rotation
 {
 	ROTATE,
 	REVERSE_ROTATE
-}	t_rotation_type;
+}					t_rotation_type;
+
+typedef struct s_rotation
+{
+	int				position;
+	int				cost;
+	t_rotation_type	direction;
+}					t_rotation;
+
+typedef struct s_move
+{
+	t_node			*node;
+	t_rotation		a;
+	t_rotation		b;
+	int				total_cost;
+}					t_move;
 
 // BENCHMARK
 typedef struct s_bench
@@ -169,6 +177,11 @@ int					find_insert_position(t_stack *stack, int target);
 int					find_position(t_stack *stack, int index);
 int					find_min(t_stack *stack);
 int					find_max(t_stack *stack);
+t_move				find_cheapest_node(t_ps *ps);
+t_move				move_cost(t_ps *ps, t_node *node);
+t_rotation			get_rotation_cost(t_stack *stack, int position);
+void				execute_rotation(t_ps *ps, t_stack *stack,
+						t_rotation rotation);
 // MEDIUM STRATEGY
 void				chunk_sort(t_ps *ps);
 
@@ -180,9 +193,9 @@ void				radix_sort(t_ps *ps);
 void				print_bench(t_ps *ps);
 void				update_bench(t_ps *ps, t_op op);
 // ERRORS
-void				error_exit(t_ps *ps);
+int					error_exit(t_ps *ps);
 
 // CLEANUP
 void				free_all(t_ps *ps);
-
+void				print_stack(t_ps *ps, t_stack stack);
 #endif

@@ -6,16 +6,16 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 17:18:15 by vinicius          #+#    #+#             */
-/*   Updated: 2026/07/13 16:43:11 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/08/06 18:38:38 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	error_exit(t_ps *ps)
+int	error_exit(t_ps *ps)
 {
 	stack_clear(&ps->a);
 	stack_clear(&ps->b);
 	write(2, "Error\n", 6);
-	return ;
+	return (0);
 }

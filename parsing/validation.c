@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 14:45:05 by vinida-s          #+#    #+#             */
-/*   Updated: 2026/07/31 23:09:28 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/08/06 18:42:35 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,14 +39,17 @@ int	is_valid_int(const char *str)
 	int	i;
 
 	i = 0;
-	if (str[0] == '-' || str[0] == '+')
+	if ((str[0] == '-' || str[0] == '+') && ft_isdigit(str[1]))
 		i++;
+	if (!ft_isdigit(str[i]))
+		return (0);
 	while (str[i])
 	{
 		if (!ft_isdigit(str[i]))
 			return (0);
 		i++;
 	}
+
 	return (1);
 }
 

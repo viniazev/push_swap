@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 17:17:25 by vinicius          #+#    #+#             */
-/*   Updated: 2026/08/06 01:11:48 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/08/06 18:13:07 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 void				medium_sort(t_ps *ps)
 {
-    return (error_exit(ps));
+    error_exit(ps);
+    return ;
 }

@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 17:15:49 by vinicius          #+#    #+#             */
-/*   Updated: 2026/08/06 00:54:07 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/08/06 23:24:31 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,33 @@
 int	find_insert_position(t_stack *stack, int target)
 {
 	int		position;
-	int		max;
-	int		min;
-	t_node	*node;
+	t_node	*current;
+	t_node	*next;
 
-	node = stack->top;
 	position = 0;
-	max = find_max(stack);
-	min = find_min(stack);
-	if (target > max)
-		return (0);
-	if (target < min)
-		return (stack->size);
-	while (node && node->next)
+	current = stack->top;
+	if (stack->size <= 1)
+		return (position);
+	while (current)
 	{
-		if (target < node->index && target > node->next->index)
-			return (position + 1);
+		if (current->next)
+			next = current->next;
+		else
+			next = stack->top;
+		if (current->index > next->index)
+		{
+			if (target < current->index && target > next->index)
+				return (position + 1);
+		}
+		else
+		{
+			if (target > next->index || target < current->index)
+				return (position + 1);
+		}
+		current = current->next;
 		position++;
-		node = node->next;
 	}
-	return (-1);
+	return (0);
 }
 
 void	rotate_to_position(t_ps *ps, t_stack *stack, int position)
@@ -54,36 +61,29 @@ void	rotate_to_position(t_ps *ps, t_stack *stack, int position)
 
 void	insertion_sort(t_ps *ps)
 {
-	int	target;
-	int	current;
+	t_move	move;
 
-	rotate_to_position(ps, &ps->b, find_position(&ps->b, find_max(&ps->b)));
+	pb(ps);
+	pb(ps);
+	if (ps->b.top->index < ps->b.top->next->index)
+		sb(ps);
 	while (ps->a.size > 0)
 	{
-		current = ps->a.top->index; //encontrar valor mais barato, ao inves de usar o topo de A
-		target = find_insert_position(&ps->b, current);
-		if (target == -1)
-			return (error_exit(ps));
-		rotate_to_position(ps, &ps->b, target);
+		move = find_cheapest_node(ps);
+		execute_rotation(ps, &ps->a, move.a);
+		execute_rotation(ps, &ps->b, move.b);
 		pb(ps);
-		rotate_to_position(ps, &ps->b, find_position(&ps->b, find_max(&ps->b)));
 	}
+	rotate_to_position(ps, &ps->b, find_position(&ps->b, find_max(&ps->b)));
 }
-/* na linha 69 tem uma segunda chamada para a funcao rotate to position, o que faz com que o stack b esteja sempre em ordem decrescente,
-isso é muito ineficiente e precisa ser alterado, posso manter o stack ordenado rotativamente e entao rotacionar o stack a para encontrar
-uma posicao mais favoravel.
-*/
 
 void	simple_sort(t_ps *ps)
 {
 	if (ps->a.size == 0)
-		return (error_exit(ps));
+		return ;
 	if (ps->a.size <= 5)
 		return (small_sort(ps));
-	pb(ps);
-	pb(ps);
 	insertion_sort(ps);
-	rotate_to_position(ps, &ps->b, find_position(&ps->b, find_max(&ps->b)));
 	while (ps->b.size > 0)
 		pa(ps);
 }

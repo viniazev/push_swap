@@ -15,7 +15,7 @@ SRCS = 	benchmark/print_bench.c disorder/compute_disorder.c indexing/assign_inde
 		parsing/ft_atol_ps.c parsing/parse_args.c parsing/parse_flags.c parsing/validation.c \
 		sorting/adaptive_sort.c sorting/complex_sort.c sorting/medium_sort.c sorting/small_sort.c \
 		sorting/sort_utils.c stack/node.c stack/stack_add.c stack/stack_clear.c stack/stack_pop.c \
-		sorting/simple_sort.c utils/error.c utils/free.c main.c 
+		sorting/simple_sort.c sorting/simple_utils.c utils/error.c utils/free.c main.c 
 
 OBJS = $(SRCS:.c=.o)
 

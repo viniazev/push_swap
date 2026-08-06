@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 17:15:32 by vinicius          #+#    #+#             */
-/*   Updated: 2026/07/15 01:38:16 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/08/06 22:16:46 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,13 +63,22 @@ void	sort_five(t_ps *ps)
 {
 	if (stack_is_sorted(&ps->a))
 		return ;
-	bring_index_to_top(ps, &ps->a, 0);
-	pb(ps);
-	bring_index_to_top(ps, &ps->a, 1);
-	pb(ps);
-	sort_three(ps);
-	pa(ps);
-	pa(ps);
+	else if (ps->a.size == 2)
+		sort_two(ps);
+	else if (ps->a.size == 3)
+		sort_three(ps);
+	else if (ps->a.size == 4)
+		sort_four(ps);
+	else
+	{
+		bring_index_to_top(ps, &ps->a, 0);
+		pb(ps);
+		bring_index_to_top(ps, &ps->a, 1);
+		pb(ps);
+		sort_three(ps);
+		pa(ps);
+		pa(ps);
+	}
 }
 
 void	small_sort(t_ps *ps)

@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 17:12:52 by vinicius          #+#    #+#             */
-/*   Updated: 2026/08/05 20:01:43 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/08/06 18:58:24 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,19 +60,19 @@ int	parse_args(int argc, char **argv, t_ps *ps)
 	char	**tokens;
 
 	i = parse_flags(argc, argv, ps);
-	j = -1;
 	while (i < argc)
 	{
+		j = -1;
 		if (ft_strchr(argv[i], ' '))
 		{
 			tokens = ft_split(argv[i], ' ');
 			while (tokens[++j])
 				if (!parse_number(tokens[j], ps))
-					break ;
+					return (0);
 			ft_freeall(tokens, j);
 		}
-		else
-			parse_number(argv[i], ps);
+		else if (!parse_number(argv[i], ps))
+				return (0);
 		i++;
 	}
 	if (has_duplicates(&ps->a))
