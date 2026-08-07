@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/30 16:33:21 by vinida-s          #+#    #+#             */
-/*   Updated: 2026/08/07 02:42:55 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/08/07 05:16:02 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	main(int argc, char **argv)
 	if (ps.bench_mode == 1 && ps.a.top)
 		print_bench(&ps);
 	//	imprimir o stack para testes, remover antes de entregar
-	print_stack(&ps, ps.a);
+//	print_stack(&ps, ps.a);
 	if (ps.a.top || ps.b.top)
 		free_all(&ps);
 	return (0);
