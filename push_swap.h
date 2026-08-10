@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 14:48:35 by vinicius          #+#    #+#             */
-/*   Updated: 2026/08/06 23:21:48 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/08/07 02:46:39 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -180,8 +180,8 @@ int					find_max(t_stack *stack);
 t_move				find_cheapest_node(t_ps *ps);
 t_move				move_cost(t_ps *ps, t_node *node);
 t_rotation			get_rotation_cost(t_stack *stack, int position);
-void				execute_rotation(t_ps *ps, t_stack *stack,
-						t_rotation rotation);
+void				execute_rotation(t_ps *ps, t_move move);
+void				rotate_or_reverse(t_ps *ps, t_move move);
 // MEDIUM STRATEGY
 void				chunk_sort(t_ps *ps);
 

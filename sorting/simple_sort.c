@@ -6,11 +6,38 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 17:15:49 by vinicius          #+#    #+#             */
-/*   Updated: 2026/08/06 23:24:31 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/08/07 02:50:04 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+void	execute_rotation(t_ps *ps, t_move move)
+{
+	while ((move.a.direction == move.b.direction) && move.a.cost > 0
+		&& move.b.cost > 0)
+	{
+		rotate_or_reverse(ps, move);
+		move.a.cost--;
+		move.b.cost--;
+	}
+	while (move.a.cost)
+	{
+		if (move.a.direction == ROTATE)
+			rotate_stack(ps, &ps->a);
+		else
+			reverse_rotate_stack(ps, &ps->a);
+		move.a.cost--;
+	}
+	while (move.b.cost)
+	{
+		if (move.b.direction == ROTATE)
+			rotate_stack(ps, &ps->b);
+		else
+			reverse_rotate_stack(ps, &ps->b);
+		move.b.cost--;
+	}
+}
 
 int	find_insert_position(t_stack *stack, int target)
 {
@@ -70,8 +97,7 @@ void	insertion_sort(t_ps *ps)
 	while (ps->a.size > 0)
 	{
 		move = find_cheapest_node(ps);
-		execute_rotation(ps, &ps->a, move.a);
-		execute_rotation(ps, &ps->b, move.b);
+		execute_rotation(ps, move);
 		pb(ps);
 	}
 	rotate_to_position(ps, &ps->b, find_position(&ps->b, find_max(&ps->b)));
