@@ -55,16 +55,10 @@ int	find_insert_position(t_stack *stack, int target)
 			next = current->next;
 		else
 			next = stack->top;
-		if (current->index > next->index)
-		{
-			if (target < current->index && target > next->index)
-				return (position + 1);
-		}
-		else
-		{
-			if (target > next->index || target < current->index)
-				return (position + 1);
-		}
+		if ((current->index > next->index && target < current->index
+				&& target > next->index) || (current->index < next->index
+				&& (target > next->index || target < current->index)))
+			return (position + 1);
 		current = current->next;
 		position++;
 	}
