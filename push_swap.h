@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 14:48:35 by vinicius          #+#    #+#             */
-/*   Updated: 2026/08/07 02:46:39 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/08/14 02:26:19 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-// ENUMS
 
+// ENUM STRATEGY
 typedef enum e_strategy
 {
 	SIMPLE,
@@ -103,6 +103,13 @@ typedef enum e_op
 	OP_RRB,
 	OP_RRR
 }					t_op;
+// STRUCT CHUNK
+typedef struct s_chunk
+{
+	int				start;
+	int				end;
+	int				size;
+}					t_chunk;
 
 // PROGRAM CONTEXT
 typedef struct s_ps
@@ -182,9 +189,16 @@ t_move				move_cost(t_ps *ps, t_node *node);
 t_rotation			get_rotation_cost(t_stack *stack, int position);
 void				execute_rotation(t_ps *ps, t_move move);
 void				rotate_or_reverse(t_ps *ps, t_move move);
+void				rotate_to_position(t_ps *ps, t_stack *stack, int position);
 // MEDIUM STRATEGY
-void				chunk_sort(t_ps *ps);
-
+void				chunk_sort(t_ps *ps, t_chunk *chunk);
+int					ft_sqrt(int nb);
+t_move				find_cheapest_in_chunk(t_ps *ps, t_chunk chunk);
+int					ft_max_number(int a, int b);
+t_move				chunk_move_cost(t_ps *ps, t_node *node, t_chunk chunk);
+void				execute_rotation_a(t_ps *ps, t_stack *stack,
+						t_rotation rotation);
+int					find_max_in_chunk(t_stack *stack, int start, int end);
 // COMPLEX STRATEGY
 void				radix_sort(t_ps *ps);
 

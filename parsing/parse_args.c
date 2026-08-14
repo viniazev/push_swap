@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 17:12:52 by vinicius          #+#    #+#             */
-/*   Updated: 2026/08/06 18:58:24 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/08/13 21:23:13 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	parse_number(char *token, t_ps *ps)
 
 	if (!is_valid_int(token))
 		return (0);
-	value = ft_atol_ps(token);
+	value = ft_atol_ps(token); //TODO: alterar essa funcao para que a verificacao de int seja feita dentro do atol.
 	if (value > INT_MAX || value < INT_MIN)
 		return (0);
 	node = node_new((int)value);
@@ -72,7 +72,7 @@ int	parse_args(int argc, char **argv, t_ps *ps)
 			ft_freeall(tokens, j);
 		}
 		else if (!parse_number(argv[i], ps))
-				return (0);
+			return (0);
 		i++;
 	}
 	if (has_duplicates(&ps->a))

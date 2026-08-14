@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 17:18:15 by vinicius          #+#    #+#             */
-/*   Updated: 2026/08/06 18:38:38 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/08/13 20:22:27 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 int	error_exit(t_ps *ps)
 {
-	stack_clear(&ps->a);
-	stack_clear(&ps->b);
+	free_all(ps);
 	write(2, "Error\n", 6);
 	return (0);
 }

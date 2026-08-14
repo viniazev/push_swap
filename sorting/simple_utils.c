@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/05 21:25:35 by vinida-s          #+#    #+#             */
-/*   Updated: 2026/08/07 02:50:18 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/08/13 23:58:49 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,6 @@ t_rotation	get_rotation_cost(t_stack *stack, int position)
 	return (rotation);
 }
 
-int	calculate_total_cost(int cost_a, int cost_b)
-{
-	if (cost_a >= cost_b)
-		return (cost_a);
-	else
-		return (cost_b);
-}
-
 t_move	move_cost(t_ps *ps, t_node *node)
 {
 	t_move	move;
@@ -50,7 +42,7 @@ t_move	move_cost(t_ps *ps, t_node *node)
 	position_b = find_insert_position(&ps->b, node->index);
 	move.b = get_rotation_cost(&ps->b, position_b);
 	if (move.a.direction == move.b.direction)
-		move.total_cost = calculate_total_cost(move.a.cost, move.b.cost);
+		move.total_cost = ft_max_number(move.a.cost, move.b.cost);
 	else
 		move.total_cost = move.a.cost + move.b.cost;
 	return (move);
@@ -73,10 +65,10 @@ t_move	find_cheapest_node(t_ps *ps)
 	}
 	return (best);
 }
-/*
-void	execute_rotation(t_ps *ps, t_stack *stack, t_rotation rotation)
+
+void	execute_rotation_a(t_ps *ps, t_stack *stack, t_rotation rotation)
 {
-	int	cost;
+	int		cost;
 
 	cost = rotation.cost;
 	while (cost > 0)
@@ -88,7 +80,6 @@ void	execute_rotation(t_ps *ps, t_stack *stack, t_rotation rotation)
 		cost--;
 	}
 }
-*/
 
 void	rotate_or_reverse(t_ps *ps, t_move move)
 {

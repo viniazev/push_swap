@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/30 16:33:21 by vinida-s          #+#    #+#             */
-/*   Updated: 2026/08/07 05:16:02 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/08/14 02:49:39 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	main(int argc, char **argv)
 	if (!parse_args(argc, argv, &ps))
 		return (error_exit(&ps));
 	if (stack_is_sorted(&ps.a))
-		return (0);
+		return (free_all(&ps), 0);
 	if (ps.a.size == 1)
 		return (0);
 	/*já que a estrategia foi selecionada no parse args,
@@ -51,7 +51,7 @@ int	main(int argc, char **argv)
 	else if (ps.strategy == SIMPLE)
 		simple_sort(&ps);
 	else if (ps.strategy == MEDIUM)
-		return (0);
+		medium_sort(&ps);
 	else
 		return (error_exit(&ps));
 	/*caso bench seja selecionado,
@@ -59,7 +59,7 @@ int	main(int argc, char **argv)
 	if (ps.bench_mode == 1 && ps.a.top)
 		print_bench(&ps);
 	//	imprimir o stack para testes, remover antes de entregar
-//	print_stack(&ps, ps.a);
+	// print_stack(&ps, ps.a);
 	if (ps.a.top || ps.b.top)
 		free_all(&ps);
 	return (0);
