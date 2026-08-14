@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 17:17:25 by vinicius          #+#    #+#             */
-/*   Updated: 2026/08/14 17:59:18 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/08/14 23:09:18 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	medium_sort(t_ps *ps)
 		return ;
 	if (ps->a.size <= 5)
 		return (small_sort(ps));
-	total_chunks = (ft_sqrt(ps->a.size) - 1) * 16; // TODO: encontrar proporcao ideal.
+	total_chunks = ft_sqrt(ps->a.size) * 16; // TODO: encontrar proporcao ideal.
 	chunk.size = total_chunks;
 	if (ps->a.size % total_chunks != 0)
 		chunk.size++;

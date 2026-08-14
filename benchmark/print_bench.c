@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 17:15:19 by vinicius          #+#    #+#             */
-/*   Updated: 2026/08/14 02:43:50 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/08/14 22:53:21 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	print_strategy(int strategy)
 		ft_printf("[bench] strategy: Adaptative / O(n log n)\n");
 }
 
-void	print_bench(t_ps *ps)
+void	print_bench(t_ps *ps) //TODO: imprimir o bench no stderr ao inves do stdin
 {
 	ft_printf("[bench] disorder: %f%%\n", ps->bench.disorder);
 	print_strategy(ps->strategy); // TODO: IMPRIMIR A STRATEGY DE ACORDO COM O SUBJECT

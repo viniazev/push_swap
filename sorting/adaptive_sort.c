@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 17:18:07 by vinicius          #+#    #+#             */
-/*   Updated: 2026/08/14 02:45:44 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/08/14 22:38:35 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	adaptative_sort(t_ps *ps)
 	else if (ps->bench.disorder >= 0.2 && ps->bench.disorder < 0.5)
 		medium_sort(ps);
 	else
-		//complex_sort(ps);
-		return ;
+		complex_sort(ps);
 	return ;
 }
