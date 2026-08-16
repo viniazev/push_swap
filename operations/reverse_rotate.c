@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 20:43:39 by vinida-s          #+#    #+#             */
-/*   Updated: 2026/07/11 19:35:23 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/08/17 00:13:07 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,18 +25,16 @@ static void	ps_reverse_rotate(t_stack *stack)
 void	rra(t_ps *ps)
 {
 	ps_reverse_rotate(&ps->a);
-	if (!ps->bench_mode)
-		ft_printf("rra\n");
-	else
+	ft_putstr_fd("rra\n", 1);
+	if (ps->bench_mode)
 		update_bench(ps, OP_RRA);
 }
 
 void	rrb(t_ps *ps)
 {
 	ps_reverse_rotate(&ps->b);
-	if (!ps->bench_mode)
-		ft_printf("rrb\n");
-	else
+	ft_putstr_fd("rrb\n", 1);
+	if (ps->bench_mode)
 		update_bench(ps, OP_RRB);
 }
 
@@ -44,9 +42,8 @@ void	rrr(t_ps *ps)
 {
 	ps_reverse_rotate(&ps->a);
 	ps_reverse_rotate(&ps->b);
-	if (!ps->bench_mode)
-		ft_printf("rrr\n");
-	else
+	ft_putstr_fd("rrr\n", 1);
+	if (ps->bench_mode)
 		update_bench(ps, OP_RRR);
 }
 

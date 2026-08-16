@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 17:17:25 by vinicius          #+#    #+#             */
-/*   Updated: 2026/08/14 23:09:18 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/08/16 23:59:42 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_move	find_cheapest_in_chunk(t_ps *ps, t_chunk chunk)
 			atual = move_cost(ps, node);
 			if (best.node == NULL)
 				best = atual;
-			else if (atual.total_cost < best.total_cost)
+			else if (atual.a.cost < best.a.cost)
 				best = atual;
 		}
 		node = node->next;
@@ -65,9 +65,9 @@ void	medium_sort(t_ps *ps)
 		return ;
 	if (ps->a.size <= 5)
 		return (small_sort(ps));
-	total_chunks = ft_sqrt(ps->a.size) * 16; // TODO: encontrar proporcao ideal.
+	total_chunks = ft_sqrt(ps->a.size * 1.8);
 	chunk.size = total_chunks;
-	if (ps->a.size % total_chunks != 0)
+	if (chunk.size == 0)
 		chunk.size++;
 	chunk.start = 0;
 	chunk.end = chunk.size - 1;

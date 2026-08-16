@@ -6,13 +6,13 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 17:18:07 by vinicius          #+#    #+#             */
-/*   Updated: 2026/08/14 22:38:35 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/08/17 00:25:36 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	adaptative_sort(t_ps *ps)
+void	adaptive_sort(t_ps *ps)
 {
 	if (ps->a.size <= 5)
 		small_sort(ps);
@@ -22,5 +22,4 @@ void	adaptative_sort(t_ps *ps)
 		medium_sort(ps);
 	else
 		complex_sort(ps);
-	return ;
 }

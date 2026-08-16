@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 14:48:35 by vinicius          #+#    #+#             */
-/*   Updated: 2026/08/14 02:26:19 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/08/17 00:25:44 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,6 +129,8 @@ int					is_valid_int(const char *str);
 int					has_duplicates(t_stack *a);
 long				ft_atol_ps(const char *str);
 int					parse_flags(int argc, char **argv, t_ps *ps);
+// UTILS
+void				strategy_chooser(t_ps *ps);
 // STACK MANAGEMENT
 
 t_node				*node_new(int value);
@@ -172,7 +174,7 @@ void				small_sort(t_ps *ps);
 void				simple_sort(t_ps *ps);
 void				medium_sort(t_ps *ps);
 void				complex_sort(t_ps *ps);
-void				adaptative_sort(t_ps *ps);
+void				adaptive_sort(t_ps *ps);
 
 // SMALL SORT
 void				sort_five(t_ps *ps);
@@ -201,6 +203,8 @@ void				execute_rotation_a(t_ps *ps, t_stack *stack,
 int					find_max_in_chunk(t_stack *stack, int start, int end);
 // COMPLEX STRATEGY
 void				radix_sort(t_ps *ps);
+int					get_max_bits(t_stack *stack);
+void				radix_bit(t_ps *ps, int bit, int size);
 
 // BENCH MODE
 

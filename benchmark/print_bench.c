@@ -6,13 +6,23 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 17:15:19 by vinicius          #+#    #+#             */
-/*   Updated: 2026/08/14 22:53:21 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/08/17 00:28:31 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static void	print_strategy(int strategy)
+static void	print_adaptive(t_ps *ps)
+{
+	if (ps->bench.disorder < 0.2)
+		ft_printf("[bench] strategy: Adaptive / O(n2)\n");
+	else if (ps->bench.disorder >= 0.2 && ps->bench.disorder < 0.5)
+		ft_printf("[bench] strategy: Adaptive / O(n√n)\n");
+	else
+		ft_printf("[bench] strategy: Adaptive / O(n log n)\n");
+}
+
+static void	print_strategy(t_ps *ps, int strategy)
 {
 	if (strategy == 0)
 		ft_printf("[bench] strategy: Simple / O(n2)\n");
@@ -21,13 +31,13 @@ static void	print_strategy(int strategy)
 	else if (strategy == 2)
 		ft_printf("[bench] strategy: Complex / O(n log n)\n");
 	else
-		ft_printf("[bench] strategy: Adaptative / O(n log n)\n");
+		print_adaptive(ps);
 }
 
-void	print_bench(t_ps *ps) //TODO: imprimir o bench no stderr ao inves do stdin
+void	print_bench(t_ps *ps)
 {
 	ft_printf("[bench] disorder: %f%%\n", ps->bench.disorder);
-	print_strategy(ps->strategy); // TODO: IMPRIMIR A STRATEGY DE ACORDO COM O SUBJECT
+	print_strategy(ps, ps->strategy);
 	ft_printf("[bench] total_ops: %l\n", ps->bench.total);
 	ft_printf("[bench] sa:  %l  sb:  %l  ss:  %l  pa:  %l  pb:  %l\n",
 		ps->bench.sa, ps->bench.sb, ps->bench.ss, ps->bench.pa, ps->bench.pb);
