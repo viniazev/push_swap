@@ -6,11 +6,22 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 17:17:25 by vinicius          #+#    #+#             */
-/*   Updated: 2026/08/16 23:59:42 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/08/17 20:46:00 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+int	get_total_chunks(int size)
+{
+	if (size <= 100)
+		return (4);
+	if (size <= 500)
+		return (12);
+	if (size <= 1000)
+		return (14);
+	return (16);
+}
 
 t_move	find_cheapest_in_chunk(t_ps *ps, t_chunk chunk)
 {
@@ -27,7 +38,7 @@ t_move	find_cheapest_in_chunk(t_ps *ps, t_chunk chunk)
 			atual = move_cost(ps, node);
 			if (best.node == NULL)
 				best = atual;
-			else if (atual.a.cost < best.a.cost)
+			else if (atual.total_cost < best.total_cost)
 				best = atual;
 		}
 		node = node->next;
@@ -65,8 +76,8 @@ void	medium_sort(t_ps *ps)
 		return ;
 	if (ps->a.size <= 5)
 		return (small_sort(ps));
-	total_chunks = ft_sqrt(ps->a.size * 1.8);
-	chunk.size = total_chunks;
+	total_chunks = get_total_chunks(ps->a.size);
+	chunk.size = (ps->a.size + (total_chunks - 1)) / total_chunks;
 	if (chunk.size == 0)
 		chunk.size++;
 	chunk.start = 0;

@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 17:17:38 by vinicius          #+#    #+#             */
-/*   Updated: 2026/08/16 23:27:24 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/08/18 15:47:37 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,5 +69,4 @@ void	complex_sort(t_ps *ps)
 	if (ps->a.size <= 5)
 		return (small_sort(ps));
 	radix_sort(ps);
-	return ;
 }
